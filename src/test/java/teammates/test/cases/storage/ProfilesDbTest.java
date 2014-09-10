@@ -304,10 +304,10 @@ public class ProfilesDbTest extends BaseComponentTestCase {
         a.name = "Valid Fresh Account";
         a.isInstructor = false;
         a.email = "valid@email.com";
-        a.institute = "TEAMMATES Test Institute 1";
+        a.institute = "National University of Singapore";
         a.studentProfile = new StudentProfileAttributes();
         a.studentProfile.googleId = a.googleId;
-        a.studentProfile.institute = "TEAMMATES Test Institute 1";
+        a.studentProfile.institute = "National University of Singapore";
         
         accountsDb.createAccount(a);
         return a;

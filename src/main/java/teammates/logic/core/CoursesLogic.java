@@ -681,7 +681,7 @@ public class CoursesLogic {
         if(hasSection){
             export += "Section" + ",";
         }
-        export  += "Team,Full Name,Last Name,Status,Email" + Const.EOL;
+        export  += "Team,First Name,Last Name,Status,Email" + Const.EOL;
         
         for (SectionDetailsBundle section : course.sections) {
             for (TeamDetailsBundle team  :   section.teams) {
@@ -696,10 +696,12 @@ public class CoursesLogic {
                     if(hasSection){
                         export += Sanitizer.sanitizeForCsv(section.name) + ",";
                     }
+                                        
+                    String[] splitName = StringHelper.splitName(StringHelper.removeExtraSpace(student.name));
 
                     export += Sanitizer.sanitizeForCsv(StringHelper.recoverFromSanitizedText(team.name)) + "," + 
-                        Sanitizer.sanitizeForCsv(StringHelper.recoverFromSanitizedText(StringHelper.removeExtraSpace(student.name))) + "," +
-                        Sanitizer.sanitizeForCsv(StringHelper.recoverFromSanitizedText(StringHelper.removeExtraSpace(student.lastName))) + "," +
+                        Sanitizer.sanitizeForCsv(StringHelper.recoverFromSanitizedText(splitName[0])) + "," +
+                        Sanitizer.sanitizeForCsv(StringHelper.recoverFromSanitizedText(splitName[1])) + "," +
                         Sanitizer.sanitizeForCsv(studentStatus) + "," +
                         Sanitizer.sanitizeForCsv(student.email) + Const.EOL;
                 }

@@ -74,8 +74,8 @@ public class EmailsTest extends BaseComponentTestCase {
         Session session = Session.getDefaultInstance(new Properties(), null);
         MimeMessage message = new MimeMessage(session);
 
-        String email = "receiver@gmail.tmt";
-        String from = "sender@gmail.tmt";
+        String email = "receiver@gmail.com";
+        String from = "sender@gmail.com";
 
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(
                 email));
@@ -86,7 +86,7 @@ public class EmailsTest extends BaseComponentTestCase {
         message.setContent("<h1>email body</h1>", "text/html");
 
         assertEquals(
-                "[Email sent]to=receiver@gmail.tmt|from=sender@gmail.tmt|subject=email subject",
+                "[Email sent]to=receiver@gmail.com|from=sender@gmail.com|subject=email subject",
                 Emails.getEmailInfo(message));
     }
 
@@ -105,9 +105,9 @@ public class EmailsTest extends BaseComponentTestCase {
         StudentAttributes s = new StudentAttributes();
         s.name = "Student Name";
         s.key = "skxxxxxxxxxks";
-        s.email = "student@email.tmt";
+        s.email = "student@email.com";
         
-        InstructorAttributes i = new InstructorAttributes("googleId2", "courseId3", "name", "instructr@email.tmt");
+        InstructorAttributes i = new InstructorAttributes("googleId2", "courseId3", "name", "instructr@email.com");
 
         ______TS("generic template, student yet to join");
 
@@ -257,9 +257,9 @@ public class EmailsTest extends BaseComponentTestCase {
         StudentAttributes s = new StudentAttributes();
         s.name = "Student Name";
         s.key = "skxxxxxxxxxks";
-        s.email = "student@email.tmt";
+        s.email = "student@email.com";
         
-        InstructorAttributes i = new InstructorAttributes("googleId1", "courseId2", "name", "instructr@email.tmt");
+        InstructorAttributes i = new InstructorAttributes("googleId1", "courseId2", "name", "instructr@email.com");
 
         ______TS("generic template, student yet to join");
 
@@ -405,7 +405,7 @@ public class EmailsTest extends BaseComponentTestCase {
         StudentAttributes s = new StudentAttributes();
         s.name = "Student Name";
         s.key = "skxxxxxxxxxks";
-        s.email = "student@email.tmt";
+        s.email = "student@email.com";
 
         MimeMessage email = new Emails().generateStudentCourseJoinEmail(c, s);
 
@@ -462,19 +462,19 @@ public class EmailsTest extends BaseComponentTestCase {
         StudentAttributes s1 = new StudentAttributes();
         s1.name = "Student1 Name";
         s1.key = "skxxxxxxxxxks1";
-        s1.email = "student1@email.tmt";
+        s1.email = "student1@email.com";
         students.add(s1);
 
         StudentAttributes s2 = new StudentAttributes();
         s2.name = "Student2 Name";
         s2.key = "skxxxxxxxxxks2";
-        s2.email = "student2@email.tmt";
+        s2.email = "student2@email.com";
         students.add(s2);
         
-        InstructorAttributes i1 = new InstructorAttributes("googleId", "CourseId", "Instructor1 Name", "instructor1@email.tmt");
+        InstructorAttributes i1 = new InstructorAttributes("googleId", "CourseId", "Instructor1 Name", "instructor1@email.com");
         instructors.add(i1);
         
-        InstructorAttributes i2 = new InstructorAttributes("anotherId", "courseId2",  "Instructor2 Name",  "instructor2@email.tmt");
+        InstructorAttributes i2 = new InstructorAttributes("anotherId", "courseId2",  "Instructor2 Name",  "instructor2@email.com");
         instructors.add(i2);
         
         ______TS("evaluation opening emails");
@@ -537,17 +537,17 @@ public class EmailsTest extends BaseComponentTestCase {
         instructors = instructorsLogic.getInstructorsForCourse(fsa.courseId);
         
         StudentAttributes s1 = new StudentAttributes();
-        s1.email = "student5InCourse1@gmail.tmt";
+        s1.email = "student5InCourse1@gmail.com";
 
         StudentAttributes s2 = new StudentAttributes();
-        s2.email = "student2InCourse1@gmail.tmt";
+        s2.email = "student2InCourse1@gmail.com";
         
         StudentAttributes s3 = new StudentAttributes();
-        s3.email = "student3InCourse1@gmail.tmt";
+        s3.email = "student3InCourse1@gmail.com";
         
-        InstructorAttributes i1 = new InstructorAttributes("googleId", "courseId1", "name", "instructor1@course1.tmt");
+        InstructorAttributes i1 = new InstructorAttributes("googleId", "courseId1", "name", "instructor1@course1.com");
         
-        InstructorAttributes i2 = new InstructorAttributes("googleId", "courseId1", "name", "instructor2@course1.tmt");
+        InstructorAttributes i2 = new InstructorAttributes("googleId", "courseId1", "name", "instructor2@course1.com");
         
         ______TS("feedback session opening emails");
 

@@ -18,7 +18,6 @@ public class InstructorFeedbacksPageData extends PageData {
     }
 
     public String courseIdForNewSession;
-    public String feedbackSessionType;
     public FeedbackSessionAttributes newFeedbackSession;
     public List<CourseAttributes> courses;
     public List<EvaluationAttributes> existingEvalSessions;

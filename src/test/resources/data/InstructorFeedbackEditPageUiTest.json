@@ -4,22 +4,22 @@
   	  "googleId": "CFeedbackEditUiT.instructor",
   	  "name": "Teammates Test",
   	  "isInstructor": true,
-  	  "email": "tmms.test@gmail.tmt",
-  	  "institute": "TEAMMATES Test Institute 1"
+  	  "email": "tmms.test@gmail.com",
+  	  "institute": "National University of Singapore"
   	},
   	"otherInstructor": {
   	  "googleId": "CFeedbackEditUiT.instructor2",
   	  "name": "Instructor 2",
   	  "isInstructor": true,
-  	  "email": "tmms.instr@gmail.tmt",
-  	  "institute": "TEAMMATES Test Institute 1"
+  	  "email": "tmms.instr@gmail.com",
+  	  "institute": "National University of Singapore"
   	},
   	"alice.tmms": {
   	  "googleId": "CFeedbackEditUiT.alice.tmms",
   	  "name": "Alice Betsy",
   	  "isInstructor": false,
-  	  "email": "alice.b.tmms@gmail.tmt",
-  	  "institute": "TEAMMATES Test Institute 1"
+  	  "email": "alice.b.tmms@gmail.com",
+  	  "institute": "National University of Singapore"
   	}
   },
 
@@ -41,7 +41,7 @@
       "googleId": "CFeedbackEditUiT.instructor",
       "courseId": "CFeedbackEditUiT.CS2104",
       "name": "Teammates Test",
-      "email": "tmms.test@gmail.tmt",
+      "email": "tmms.test@gmail.com",
       "role":"Co-owner",
       "displayedName":"Co-owner",
       "instructorPrivilegesAsText": "{\n  \"courseLevel\": {\n    \"canviewstudentinsection\": true,\n    \"cangivecommentinsection\": true,\n    \"cansubmitsessioninsection\": true,\n    \"canmodifysessioncommentinsection\": true,\n    \"canmodifycommentinsection\": true,\n    \"canmodifycourse\": true,\n    \"canviewsessioninsection\": true,\n    \"canmodifysession\": true,\n    \"canviewcommentinsection\": true,\n    \"canmodifystudent\": true,\n    \"canmodifyinstructor\": true\n  },\n  \"sectionLevel\": {},\n  \"sessionLevel\": {}\n}"
@@ -50,7 +50,7 @@
       "googleId": "CFeedbackEditUiT.instructor2",
       "courseId": "CFeedbackEditUiT.CS2104",
       "name": "Instructor 2",
-      "email": "tmms.instr@course.tmt",
+      "email": "tmms.instr@course.com",
       "role":"Co-owner",
       "displayedName":"Co-owner",
       "instructorPrivilegesAsText": "{\n  \"courseLevel\": {\n    \"canviewstudentinsection\": true,\n    \"cangivecommentinsection\": true,\n    \"cansubmitsessioninsection\": true,\n    \"canmodifysessioncommentinsection\": true,\n    \"canmodifycommentinsection\": true,\n    \"canmodifycourse\": true,\n    \"canviewsessioninsection\": true,\n    \"canmodifysession\": true,\n    \"canviewcommentinsection\": true,\n    \"canmodifystudent\": true,\n    \"canmodifyinstructor\": true\n  },\n  \"sectionLevel\": {},\n  \"sessionLevel\": {}\n}"
@@ -60,7 +60,7 @@
   "students": {
     "alice.tmms@CFeedbackEditUiT.CS2104": {
       "googleId": "CFeedbackEditUiT.alice.tmms",
-      "email": "alice.b.tmms@gmail.tmt",
+      "email": "alice.b.tmms@gmail.com",
       "course": "CFeedbackEditUiT.CS2104",
       "name": "Alice Betsy",
       "comments": "This student's name is Alice Betsy",
@@ -68,7 +68,7 @@
     },
     "benny.tmms@CFeedbackEditUiT.CS2104": {
       "googleId": "CFeedbackEditUiT.benny.tmms",
-      "email": "benny.tmms@gmail.tmt",
+      "email": "benny.tmms@gmail.com",
       "course": "CFeedbackEditUiT.CS2104",
       "name": "Benny Charles",
       "comments": "This student's name is Benny Charles",
@@ -76,7 +76,7 @@
     },
     "charlie.tmms@CFeedbackEditUiT.CS1101": {
       "googleId": "charlie.tmms",
-      "email": "CFeedbackEditUiT.charlie.tmms@gmail.tmt",
+      "email": "CFeedbackEditUiT.charlie.tmms@gmail.com",
       "course": "CFeedbackEditUiT.CS1101",
       "name": "Charlie Davis",
       "comments": "This student's name is Charlie Davis",
@@ -84,7 +84,7 @@
     },
     "danny.tmms@CFeedbackEditUiT.CS1101": {
       "googleId": "danny.tmms",
-      "email": "CFeedbackEditUiT.danny.tmms@gmail.tmt",
+      "email": "CFeedbackEditUiT.danny.tmms@gmail.com",
       "course": "CFeedbackEditUiT.CS1101",
       "name": "Danny Engrid",
       "comments": "This student's name is Danny Engrid",
@@ -96,7 +96,7 @@
     "openSession": {
       "feedbackSessionName" : "First Session",
       "courseId" : "CFeedbackEditUiT.CS2104",
-      "creatorEmail" : "tmms.test@gmail.tmt",
+      "creatorEmail" : "tmms.test@gmail.com",
       "instructions": {"value" : "Instructions for first session"},
       "createdTime" : "2012-04-01 11:59 PM UTC",
       "startTime" : "2012-04-01 11:59 PM UTC",

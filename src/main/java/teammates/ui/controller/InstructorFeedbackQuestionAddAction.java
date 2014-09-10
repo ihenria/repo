@@ -36,11 +36,8 @@ public class InstructorFeedbackQuestionAddAction extends Action {
             statusToUser.addAll(questionDetailsErrors);
             isError = true;
         } else {
-            String err = validateContribQnGiverRecipient(feedbackQuestion);
-            if(!err.isEmpty()){
-                statusToUser.add(err);
-                isError = true;
-            }
+            
+            validateContribQnGiverRecipient(feedbackQuestion);
             
             try {
                 logic.createFeedbackQuestion(feedbackQuestion);    
@@ -60,9 +57,20 @@ public class InstructorFeedbackQuestionAddAction extends Action {
         return createRedirectResult(new PageData(account).getInstructorFeedbackSessionEditLink(courseId,feedbackSessionName));
     }
 
-    private String validateContribQnGiverRecipient(
+    private void validateContribQnGiverRecipient(
             FeedbackQuestionAttributes feedbackQuestion) {
-        return InstructorFeedbackQuestionEditAction.validateContribQnGiverRecipient(feedbackQuestion);
+        //Check for contrib qn giver/recipient type.
+        if(feedbackQuestion.questionType == FeedbackQuestionType.CONTRIB){
+            Assumption.assertEquals("Contrib qn giver type invalid: " + feedbackQuestion.giverType.toString(),
+                    feedbackQuestion.giverType, FeedbackParticipantType.STUDENTS);
+            Assumption.assertEquals("Contrib qn recipient type invalid: " + feedbackQuestion.recipientType.toString(),
+                    feedbackQuestion.recipientType, FeedbackParticipantType.OWN_TEAM_MEMBERS_INCLUDING_SELF);
+            Assumption.assertTrue("Contrib Qn Invalid visibility options",
+                    (feedbackQuestion.showResponsesTo.contains(FeedbackParticipantType.RECEIVER)
+                    == feedbackQuestion.showResponsesTo.contains(FeedbackParticipantType.RECEIVER_TEAM_MEMBERS) &&
+                    (feedbackQuestion.showResponsesTo.contains(FeedbackParticipantType.RECEIVER_TEAM_MEMBERS)
+                    == feedbackQuestion.showResponsesTo.contains(FeedbackParticipantType.OWN_TEAM_MEMBERS))));
+        }
     }
 
     private static FeedbackQuestionAttributes extractFeedbackQuestionData(Map<String, String[]> requestParameters, String creatorEmail) {

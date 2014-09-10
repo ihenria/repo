@@ -370,7 +370,6 @@ public class StudentsDb extends EntitiesDb {
 
         student.setEmail(Sanitizer.sanitizeForHtml(newEmail));
         student.setName(Sanitizer.sanitizeForHtml(newName));
-        student.setLastName(Sanitizer.sanitizeName(StringHelper.splitName(newName)[1]));
         student.setComments(Sanitizer.sanitizeForHtml(newComments));
         student.setGoogleId(Sanitizer.sanitizeForHtml(newGoogleID));
         student.setTeamName(Sanitizer.sanitizeForHtml(newTeamName));

@@ -114,7 +114,7 @@ public class InstructorCourseJoinAuthenticatedActionTest extends BaseActionTest 
         
         AccountAttributes newInstructorAccount = new AccountAttributes(
                 instructor.googleId, instructor.name, false,
-                instructor.email, "TEAMMATES Test Institute 5");
+                instructor.email, "NUS");
         AccountsLogic.inst().createAccount(newInstructorAccount);
         
         InstructorAttributes newInstructor = instrDb.getInstructorForEmail(instructor.courseId, instructor.email);
@@ -152,7 +152,7 @@ public class InstructorCourseJoinAuthenticatedActionTest extends BaseActionTest 
         
         newInstructorAccount = new AccountAttributes(
                 instructor.googleId, instructor.name, false,
-                instructor.email, "TEAMMATES Test Institute 5");
+                instructor.email, "NUS");
         AccountsLogic.inst().createAccount(newInstructorAccount);
         
         newInstructor = instrDb.getInstructorForEmail(instructor.courseId, instructor.email);

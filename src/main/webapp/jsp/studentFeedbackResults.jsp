@@ -119,7 +119,8 @@
             %>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Question <%=qnIndx%>: <span class="text-preserve-space"><%=StudentFeedbackResultsPageData.sanitizeForHtml(questionDetails.questionText)%><%=questionDetails.getQuestionAdditionalInfoHtml(qnIndx, "")%></span></h4>
+                        <h4>Question <%=qnIndx%>: <span class="text-preserve-space"><%=StudentFeedbackResultsPageData.sanitizeForHtml(questionDetails.questionText)%>
+                        <%=questionDetails.getQuestionAdditionalInfoHtml(qnIndx, "")%></span></h4>
                         <%=
                             questionDetails.getQuestionResultStatisticsHtml(questionWithResponses
                                     .getValue(), question, data.account, data.bundle, "student")
@@ -185,7 +186,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-preserve-space"><%=singleResponse.getResponseDetails().getAnswerHtml(questionDetails)%></td>
+                                <td class="multiline"><%=singleResponse.getResponseDetails().getAnswerHtml(questionDetails)%></td>
                             </tr>
                         <%
                             List<FeedbackResponseCommentAttributes> responseComments = data.bundle.responseComments.get(singleResponse.getId());

@@ -69,10 +69,10 @@
                             <select class="form-control"
                                 name="<%=Const.ParamsNames.FEEDBACK_SESSION_TYPE%>"
                                 id="<%=Const.ParamsNames.FEEDBACK_SESSION_TYPE%>">
-                                <option value="STANDARD" <%= (data.feedbackSessionType != null && data.feedbackSessionType.equals("STANDARD")) ? "selected=\"selected\"" : "" %> >
+                                <option value="STANDARD">
                                     Session with your own questions
-                                </option>                               
-                                <option value="TEAMEVALUATION" <%= (data.feedbackSessionType == null || data.feedbackSessionType.equals("TEAMEVALUATION")) ? "selected=\"selected\"" : "" %> >
+                                </option>
+                                <option value="TEAMEVALUATION" selected="selected">
                                     Team peer evaluation session
                                 </option>
                             </select>
@@ -225,9 +225,8 @@
                                             id="<%=Const.ParamsNames.FEEDBACK_SESSION_STARTTIME%>">
                                             <%
                                                 Date date;
-                                                date = data.newFeedbackSession == null ? null
-                                                		: data.newFeedbackSession.startTime;
-                                               
+                                                date = (data.newFeedbackSession == null ? null
+                                                        : data.newFeedbackSession.startTime);
                                                 for (String opt : data.getTimeOptionsAsHtml(date))
                                                     out.println(opt);
                                             %>

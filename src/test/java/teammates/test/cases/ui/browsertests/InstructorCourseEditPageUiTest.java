@@ -119,17 +119,17 @@ public class InstructorCourseEditPageUiTest extends BaseUiTestCase {
         ______TS("success: invite an uregistered instructor");
         
         courseEditPage.clickInviteInstructorLink();
-        courseEditPage.verifyStatus(Const.StatusMessages.COURSE_REMINDER_SENT_TO + "InsCrsEdit.newInstr@gmail.tmt");
+        courseEditPage.verifyStatus(Const.StatusMessages.COURSE_REMINDER_SENT_TO + "InsCrsEdit.newInstr@gmail.com");
     }
 
     private void testAddInstructorAction() {
 
         ______TS("success: add an instructor");
         
-        courseEditPage.addNewInstructor("Teammates Instructor", "InsCrsEdit.instructor@gmail.tmt");
+        courseEditPage.addNewInstructor("Teammates Instructor", "InsCrsEdit.instructor@gmail.com");
         courseEditPage.verifyStatus(
                 String.format(Const.StatusMessages.COURSE_INSTRUCTOR_ADDED,
-                        "Teammates Instructor", "InsCrsEdit.instructor@gmail.tmt"));
+                        "Teammates Instructor", "InsCrsEdit.instructor@gmail.com"));
         
         Url courseDetailsLink = createUrl(Const.ActionURIs.INSTRUCTOR_COURSE_DETAILS_PAGE)
                 .withCourseId(courseId)
@@ -141,18 +141,18 @@ public class InstructorCourseEditPageUiTest extends BaseUiTestCase {
     
         ______TS("failure: add an existing instructor");
         
-        courseEditPage.addNewInstructor("Teammates Instructor", "InsCrsEdit.instructor@gmail.tmt");
+        courseEditPage.addNewInstructor("Teammates Instructor", "InsCrsEdit.instructor@gmail.com");
         courseEditPage.verifyStatus(Const.StatusMessages.COURSE_INSTRUCTOR_EXISTS);
         
         ______TS("failure: add an instructor with an invalid parameter");
-        String invalidEmail = "InsCrsEdit.email.tmt";
+        String invalidEmail = "InsCrsEdit.email.com";
         
         courseEditPage.addNewInstructor("Teammates Instructor", invalidEmail);
         courseEditPage.verifyStatus((new FieldValidator()).getInvalidityInfo(FieldType.EMAIL, invalidEmail));
 
         String invalidName = "";
         
-        courseEditPage.addNewInstructor(invalidName, "teammates@email.tmt");
+        courseEditPage.addNewInstructor(invalidName, "teammates@email.com");
         courseEditPage.verifyStatus((new FieldValidator()).getInvalidityInfo(FieldType.PERSON_NAME, invalidName));
     }
 
@@ -160,7 +160,7 @@ public class InstructorCourseEditPageUiTest extends BaseUiTestCase {
 
         ______TS("success: edit an instructor");
         
-        courseEditPage.editInstructor(instructorId, "New name", "new_email@email.tmt");
+        courseEditPage.editInstructor(instructorId, "New name", "new_email@email.com");
         courseEditPage.verifyStatus(Const.StatusMessages.COURSE_INSTRUCTOR_EDITED);
         
         ______TS("success: edit an instructor--viewing instructor permission details");
@@ -196,14 +196,14 @@ public class InstructorCourseEditPageUiTest extends BaseUiTestCase {
         courseEditPage.verifyHtmlMainContent("/instructorCourseEditEditInstructorPrivilegesSuccessful.html");
         
         ______TS("failure: edit failed due to invalid parameters");
-        String invalidEmail = "InsCrsEdit.email.tmt";
+        String invalidEmail = "InsCrsEdit.email.com";
         
         courseEditPage.editInstructor(instructorId, "New name", invalidEmail);
         courseEditPage.verifyStatus((new FieldValidator()).getInvalidityInfo(FieldType.EMAIL, invalidEmail));
         
         String invalidName = "";
         
-        courseEditPage.editInstructor(instructorId, invalidName, "teammates@email.tmt");
+        courseEditPage.editInstructor(instructorId, invalidName, "teammates@email.com");
         courseEditPage.verifyStatus((new FieldValidator()).getInvalidityInfo(FieldType.PERSON_NAME, invalidName));
     }
     

@@ -86,7 +86,7 @@ public class SubmissionsLogicTest extends BaseComponentTestCase{
 
         ______TS("evaluation in empty course");
         
-        logic.createAccount("instructor1", "Instructor 1", true, "instructor@email.com", "TEAMMATES Test Institute 1");
+        logic.createAccount("instructor1", "Instructor 1", true, "instructor@email.com", "National University Of Singapore");
         String idOfEmptyCourse = "emptycourse1";
         logic.createCourseAndInstructor("instructor1", idOfEmptyCourse, "Course 1");
         evaluation.courseId = idOfEmptyCourse;

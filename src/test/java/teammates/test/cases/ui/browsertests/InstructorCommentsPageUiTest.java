@@ -12,7 +12,6 @@ import teammates.common.util.Url;
 import teammates.test.pageobjects.Browser;
 import teammates.test.pageobjects.BrowserPool;
 import teammates.test.pageobjects.InstructorCommentsPage;
-import teammates.test.pageobjects.InstructorHomePage;
 
 public class InstructorCommentsPageUiTest extends BaseUiTestCase {
     private static Browser browser;
@@ -202,9 +201,6 @@ public class InstructorCommentsPageUiTest extends BaseUiTestCase {
     }
     
     private void testEmailPendingComments() {
-        InstructorHomePage homePage = commentsPage.clickHomePageLinkInHeader();
-        homePage.verifyContains("Send email notification to recipients of 2 pending comments");
-        commentsPage.clickCommentsPageLinkInHeader();
         commentsPage.clickSendEmailNotificationButton();
         commentsPage.verifyStatus(Const.StatusMessages.COMMENT_CLEARED);
     }

@@ -113,7 +113,7 @@ public class AccountsDbTest extends BaseComponentTestCase {
         a.name = "Test account Name";
         a.isInstructor = false;
         a.email = "fresh-account@email.com";
-        a.institute = "TEAMMATES Test Institute 1";
+        a.institute = "National University of Singapore";
         a.studentProfile = null;
         
         accountsDb.createAccount(a);
@@ -308,10 +308,10 @@ public class AccountsDbTest extends BaseComponentTestCase {
         a.name = "Valid Fresh Account";
         a.isInstructor = false;
         a.email = "valid@email.com";
-        a.institute = "TEAMMATES Test Institute 1";
+        a.institute = "National University of Singapore";
         a.studentProfile = new StudentProfileAttributes();
         a.studentProfile.googleId = a.googleId;
-        a.studentProfile.institute = "TEAMMATES Test Institute 1";
+        a.studentProfile.institute = "National University of Singapore";
         
         return a;
     }

@@ -75,7 +75,7 @@ public class InstructorStudentCommentAddActionTest extends BaseActionTest {
 
         assertEquals(Const.ActionURIs.INSTRUCTOR_STUDENT_RECORDS_PAGE
                 + "?courseid=idOfTypicalCourse1&"
-                + "studentemail=student3InCourse1%40gmail.tmt&"
+                + "studentemail=student3InCourse1%40gmail.com&"
                 + "user=idOfInstructor3&"
                 + "error=false",
                 r.getDestinationWithParams());
@@ -84,7 +84,7 @@ public class InstructorStudentCommentAddActionTest extends BaseActionTest {
 
         String expectedLogMessage = "TEAMMATESLOG|||instructorStudentCommentAdd|||instructorStudentCommentAdd"+
                 "|||true|||Instructor|||Instructor 3 of Course 1 and 2|||idOfInstructor3"+
-                "|||instr3@course1n2.tmt|||" +
+                "|||instr3@course1n2.com|||" +
                 "Created Comment for Student:<span class=\"bold\">([" + student.email + "])</span> " +
                 "for Course <span class=\"bold\">[" + instructor.courseId + "]</span><br>" +
                 "<span class=\"bold\">Comment:</span> "  + "<Text: A typical comment to be added>" +

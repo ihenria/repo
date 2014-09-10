@@ -58,14 +58,14 @@ public class InstructorFeedbackPreviewAsInstructorActionTest extends
         
         assertEquals("TEAMMATESLOG|||instructorFeedbackPreviewAsInstructor|||instructorFeedbackPreviewAsInstructor"
                 + "|||true|||Instructor|||Instructor 1 of Course 1" 
-                + "|||" + idOfInstructor1 + "|||instr1@course1.tmt|||"
+                + "|||" + idOfInstructor1 + "|||instr1@course1.com|||"
                 + "Preview feedback session as instructor (" + instructor2.email + ")<br>"
                 + "Session Name: First feedback session<br>Course ID: " + instructor1.courseId
                 + "|||/page/instructorFeedbackPreviewAsInstructor"
                 , paia.getLogMessage());
         
         ______TS("failure: non-existent previewas email");
-        previewAsEmail = "non-existentEmail@course13212.tmt";
+        previewAsEmail = "non-existentEmail@course13212.com";
         
         submissionParams = new String[] {
                 Const.ParamsNames.COURSE_ID, courseId,

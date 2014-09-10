@@ -4,27 +4,27 @@
       "googleId": "CCSDetailsUiT.instr",
       "name": "Teammates Test",
       "isInstructor": true,
-      "email": "CCSDetailsUiT.instr@gmail.tmt",
-      "institute": "TEAMMATES Test Institute 1"
+      "email": "CCSDetailsUiT.instr@gmail.com",
+      "institute": "National University of Singapore"
     },
     "CCSDetailsUiT.Helper": {
       "googleId": "CCSDetailsUiT.instr",
       "name": "Teammates Test",
       "isInstructor": true,
-      "email": "CCSDetailsUiT.Helper@gmail.tmt",
-      "institute": "TEAMMATES Test Institute 1"
+      "email": "CCSDetailsUiT.Helper@gmail.com",
+      "institute": "National University of Singapore"
     },
     "registeredStudent": {
       "googleId": "CCSDetailsUiT.jose.tmms",
-      "email": "CCSDetailsUiT.jose.tmms@gmail.tmt",
+      "email": "CCSDetailsUiT.jose.tmms@gmail.com",
       "name": "José Gómez",
       "isInstructor":"false",
-      "institute":"TEAMMATES Test Institute 5",
+      "institute":"NUS",
       "studentProfile": {
             "googleId":"CCSDetailsUiT.jose.tmms",
             "shortName":"Jose",
-            "institute":"TEAMMATES Test Institute 7",
-            "email":"jose@e.tmt",
+            "institute":"NTU",
+            "email":"jose@e.com",
             "nationality":"Laosian",
             "gender":"other",
             "moreInfo":"This is a lot of info...",
@@ -46,7 +46,7 @@
       "googleId": "CCSDetailsUiT.instr",
       "courseId": "CCSDetailsUiT.CS2104",
       "name": "Teammates Test",
-      "email": "CCSDetailsUiT.instr@gmail.tmt",
+      "email": "CCSDetailsUiT.instr@gmail.com",
       "role":"Co-owner",
       "isDisplayedToStudents":true,
       "displayedName":"Instructor",
@@ -56,7 +56,7 @@
       "googleId": "CCSDetailsUiT.Helper",
       "courseId": "CCSDetailsUiT.CS2104",
       "name": "Teammates Test",
-      "email": "CCSDetailsUiT.Helper@gmail.tmt",
+      "email": "CCSDetailsUiT.Helper@gmail.com",
       "role":"Helper",
       "isDisplayedToStudents":true,
       "displayedName":"Instructor",
@@ -67,7 +67,7 @@
   "students": {
     "registeredStudent": {
       "googleId": "CCSDetailsUiT.jose.tmms",
-      "email": "CCSDetailsUiT.jose.tmms@gmail.tmt",
+      "email": "CCSDetailsUiT.jose.tmms@gmail.com",
       "course": "CCSDetailsUiT.CS2104",
       "name": "José Gómez",
       "comments": "This student's name is José Gómez",
@@ -75,7 +75,7 @@
     },
     "unregisteredStudent": {
       "googleId": "",
-      "email": "benny.c.tmms@gmail.tmt",
+      "email": "benny.c.tmms@gmail.com",
       "course": "CCSDetailsUiT.CS2104",
       "name": "Benny Charles",
       "comments": "This student's name is Benny Charles",

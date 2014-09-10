@@ -113,7 +113,7 @@ public class StudentCourseJoinAuthenticatedActionTest extends BaseActionTest {
 
         AccountAttributes newStudentAccount = new AccountAttributes(
                 "idOfNewStudent", "nameOfNewStudent", false,
-                "newStudent@gmail.com", "TEAMMATES Test Institute 5");
+                "newStudent@gmail.com", "NUS");
         accountsDb.createAccount(newStudentAccount);
 
         StudentAttributes newStudentAttributes = new StudentAttributes(

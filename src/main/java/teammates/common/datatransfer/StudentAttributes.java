@@ -62,7 +62,6 @@ public class StudentAttributes extends EntityAttributes {
     //Note: be careful when changing these variables as their names are used in *.json files.
     public String googleId;
     public String name;
-    public String lastName;
     public String email;
     public String course = null;
     public String comments = null;
@@ -86,7 +85,6 @@ public class StudentAttributes extends EntityAttributes {
         this();
         this.section = Sanitizer.sanitizeTitle(section);
         this.team = Sanitizer.sanitizeTitle(team);
-        this.lastName = Sanitizer.sanitizeName(StringHelper.splitName(name)[1]);
         this.name = Sanitizer.sanitizeName(name);
         this.email = Sanitizer.sanitizeEmail(email);
         this.comments = Sanitizer.sanitizeTextField(comment);
@@ -98,7 +96,6 @@ public class StudentAttributes extends EntityAttributes {
         this.email = student.getEmail();
         this.course = student.getCourseId();
         this.name = student.getName();
-        this.lastName = student.getLastName();
         this.comments = Sanitizer.sanitizeTextField(student.getComments());
         this.team = Sanitizer.sanitizeTitle(student.getTeamName());
         this.section = ((student.getSectionName() == null) ? Const.DEFAULT_SECTION 
@@ -145,6 +142,7 @@ public class StudentAttributes extends EntityAttributes {
         return new Url(Const.ActionURIs.STUDENT_PROFILE_PICTURE)
                     .withStudentEmail(StringHelper.encrypt(email))
                     .withCourseId(StringHelper.encrypt(course))
+                    .withUserId(googleId)
                     .toString();
     }
 

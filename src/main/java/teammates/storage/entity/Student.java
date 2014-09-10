@@ -6,8 +6,6 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-import teammates.common.util.StringHelper;
-
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.gson.annotations.SerializedName;
 
@@ -50,11 +48,6 @@ public class Student {
     @Extension(vendorName = "datanucleus", key = "gae.unindexed", value = "true")
     @SerializedName("name")
     private String name = null;
-    
-    @Persistent
-    @Extension(vendorName = "datanucleus", key = "gae.unindexed", value = "true")
-    @SerializedName("lastName")
-    private String lastName = null;
 
     @Persistent
     @Extension(vendorName = "datanucleus", key = "gae.unindexed", value = "true")
@@ -74,8 +67,6 @@ public class Student {
      *            Student's email used for this course.
      * @param name
      *            Student name.
-     * @param lastName
-     *            Student last name
      * @param googleId
      *            Student's Google Id. Can be null/empty if the student hasn't
      *            registered yet.
@@ -116,24 +107,9 @@ public class Student {
     }
 
     public void setName(String name) {
-        name = name.trim();
-        String processedFullName = StringHelper.splitName(name)[2];
-        this.name = processedFullName.trim();
-        this.setLastName(StringHelper.splitName(name)[1]);
+        this.name = name.trim();
     }
-    
-    public void setLastName(String lastName){
-        this.lastName = lastName.trim();
-    }
-    
-    public String getLastName(){
-        //for legacy data
-        if(this.lastName == null){
-            this.lastName = StringHelper.splitName(this.name)[1];
-        }
-        return lastName;
-    }
-    
+
     public String getComments() {
         return comments;
     }

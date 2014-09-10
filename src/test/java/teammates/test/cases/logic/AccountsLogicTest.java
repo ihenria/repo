@@ -480,7 +480,7 @@ public class AccountsLogicTest extends BaseComponentTestCase {
         instructorsLogic.verifyInstructorExists(nonInstrAccount.googleId);
         
         AccountAttributes instructorAccount = accountsLogic.getAccount(nonInstrAccount.googleId);
-        assertEquals("TEAMMATES Test Institute 1", instructorAccount.institute);
+        assertEquals("National University of Singapore", instructorAccount.institute);
         
         accountsLogic.deleteAccountCascade(nonInstrAccount.googleId);
         

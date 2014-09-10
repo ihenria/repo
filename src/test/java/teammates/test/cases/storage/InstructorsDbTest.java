@@ -65,7 +65,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
         String googleId = "valid.fresh.id";
         String courseId = "valid.course.Id";
         String name = "valid.name";
-        String email = "valid@email.tmt";
+        String email = "valid@email.com";
         String role = Const.InstructorPermissionRoleNames.INSTRUCTOR_PERMISSION_ROLE_COOWNER;
         String displayedName = InstructorAttributes.DEFAULT_DISPLAY_NAME;
         InstructorPrivileges privileges = new InstructorPrivileges(Const.InstructorPermissionRoleNames.INSTRUCTOR_PERMISSION_ROLE_COOWNER);
@@ -99,7 +99,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
         }
         
         i.googleId = "valid.fresh.id";
-        i.email = "invalid.email.tmt";
+        i.email = "invalid.email.com";
         try {
             instructorsDb.createEntity(i);
             signalFailureToDetectException();
@@ -204,7 +204,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
         
         ______TS("Success: get instructors with specific email");
         
-        String email = "instructor1@course1.tmt";
+        String email = "instructor1@course1.com";
         
         List<InstructorAttributes> retrieved = instructorsDb.getInstructorsForEmail(email);
         assertEquals(1, retrieved.size());
@@ -305,7 +305,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
         ______TS("Success: update an instructor");
 
         instructorToEdit.name = "New Name";
-        instructorToEdit.email = "InstrDbT.new-email@email.tmt";
+        instructorToEdit.email = "InstrDbT.new-email@email.com";
         instructorsDb.updateInstructorByGoogleId(instructorToEdit);
         
         InstructorAttributes instructorUpdated = instructorsDb.getInstructorForGoogleId(instructorToEdit.courseId, instructorToEdit.googleId);
@@ -330,7 +330,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
 
         instructorToEdit.googleId = "idOfInstructor4";
         instructorToEdit.name = "New Name 2";
-        instructorToEdit.email = "InstrDbT.new-email2@email.tmt";
+        instructorToEdit.email = "InstrDbT.new-email2@email.com";
         try {
             instructorsDb.updateInstructorByGoogleId(instructorToEdit);
             signalFailureToDetectException();
@@ -353,7 +353,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
     @Test
     public void testUpdateInstructorByEmail() throws Exception {
         
-        InstructorAttributes instructorToEdit = instructorsDb.getInstructorForEmail("idOfTypicalCourse1", "instructor1@course1.tmt");
+        InstructorAttributes instructorToEdit = instructorsDb.getInstructorForEmail("idOfTypicalCourse1", "instructor1@course1.com");
         
         ______TS("Success: update an instructor");
         
@@ -384,7 +384,7 @@ public class InstructorsDbTest extends BaseComponentTestCase {
 
         instructorToEdit.googleId = "idOfInstructor4";
         instructorToEdit.name = "New Name 2";
-        instructorToEdit.email = "newEmail@email.tmt";
+        instructorToEdit.email = "newEmail@email.com";
         try {
             instructorsDb.updateInstructorByEmail(instructorToEdit);
             signalFailureToDetectException();
